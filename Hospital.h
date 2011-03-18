@@ -17,12 +17,12 @@ public:
     Hospital(QString,QString);
     ~Hospital();
     void addBedAcute();
-    void removeBedAcute(int);
+    bool removeBedAcute(int);
     int getSizeAcute();
     bool isEmptyAcute();
 
     void addBedComplex();
-    void removeBedComplex(int);
+    bool removeBedComplex(int);
     int getSizeComplex();
     bool isEmptyComplex();
 

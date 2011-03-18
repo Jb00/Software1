@@ -5,6 +5,7 @@
 #include <Bed.h>
 #include <Facility.h>
 #include <Hospital.h>
+#include <LongTermCare.h>
 #include <iostream>
 class AddBedController
 {

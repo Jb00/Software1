@@ -22,6 +22,7 @@ QString AddBedController::addtoBed(QString aNumberBed, QString aType, QString aF
     type = aType;
     facility = aFacility;
     Hospital * aFacility2 = new Hospital("TheFacility","Ottawa"); //Will use the main facility list, but for now.LEt's assume 1 facility TO CHANGE
+    LongTermCare * aFacility3 = new LongTermCare("TheFacility","Ottawa"); //Will use the main facility list, but for now.LEt's assume 1 facility TO CHANGE
 
     numberBedInt = numberBed.toInt(&ok);
 
@@ -35,7 +36,8 @@ QString AddBedController::addtoBed(QString aNumberBed, QString aType, QString aF
     {
         if (numberBedInt < 0)
         {
-            aFacility2->removeBedAcute(numberBedInt);
+            if(!aFacility2->removeBedAcute(numberBedInt))
+                return "-1";
         }
         else
         {
@@ -52,13 +54,13 @@ QString AddBedController::addtoBed(QString aNumberBed, QString aType, QString aF
         {
             if (numberBedInt < 0)
             {
-                aFacility2->removeBedComplex(numberBedInt);
+                if(!aFacility2->removeBedComplex(numberBedInt))
+                    return "-1";
             }
             else
             {
                 for (int i=0; i< numberBedInt ; i++)
                 {
-                    std::cout<<"Test bitch";
                     aFacility2->addBedComplex();
                 }
             }
@@ -70,16 +72,17 @@ QString AddBedController::addtoBed(QString aNumberBed, QString aType, QString aF
         {
             if (numberBedInt < 0)
             {
-                aFacility2->removeBedAcute(numberBedInt);
+                if(!aFacility3->removeBedLTC(numberBedInt))
+                    return "-1";
             }
             else
             {
                 for (int i=0; i< numberBedInt ; i++)
                 {
-                    aFacility2->addBedAcute();
+                    aFacility3->addBedLTC();
                 }
             }
-            numberBed.setNum(aFacility2->getSizeAcute()); //Set as integer
+            numberBed.setNum(aFacility3->getSizeLTC()); //Set as integer
 
         }
 
