@@ -22,7 +22,7 @@ private :
 
 public:
     static AddBedController* getInstance();
-    QString addtoBed(QString,QString,QString);
+    QString addtoBed(QString,QString,Hospital*);
 
 
 };

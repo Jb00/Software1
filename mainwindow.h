@@ -4,7 +4,8 @@
 #include <QMainWindow>
 #include "Bed.h"
 #include "AddBedController.h"
-
+#include "Hospital.h"
+#include "LongTermCare.h"
 namespace Ui {
     class MainWindow;
 }
@@ -19,6 +20,7 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    Hospital * aFacility2;
 
 private slots:
     void addBedClick();

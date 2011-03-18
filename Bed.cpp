@@ -2,7 +2,7 @@
 
 Bed::Bed()
 {
-    use = 500;
+    use = 0;
 }
 
 Bed::~Bed()

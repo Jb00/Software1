@@ -14,15 +14,15 @@ AddBedController::AddBedController()
 {
 }
 
-QString AddBedController::addtoBed(QString aNumberBed, QString aType, QString aFacility)
+QString AddBedController::addtoBed(QString aNumberBed, QString aType, Hospital *aFacility)
 {
     bool ok; //to make sure the conversion String to number Worked;
     int numberBedInt; //To hold the String to int
     numberBed = aNumberBed;
     type = aType;
-    facility = aFacility;
-    Hospital * aFacility2 = new Hospital("TheFacility","Ottawa"); //Will use the main facility list, but for now.LEt's assume 1 facility TO CHANGE
-    LongTermCare * aFacility3 = new LongTermCare("TheFacility","Ottawa"); //Will use the main facility list, but for now.LEt's assume 1 facility TO CHANGE
+ //   facility = aFacility;
+ //   Hospital * aFacility2 = new Hospital("TheFacility","Ottawa"); //Will use the main facility list, but for now.LEt's assume 1 facility TO CHANGE
+ //   LongTermCare * aFacility3 = new LongTermCare("TheFacility","Ottawa"); //Will use the main facility list, but for now.LEt's assume 1 facility TO CHANGE
 
     numberBedInt = numberBed.toInt(&ok);
 
@@ -36,17 +36,17 @@ QString AddBedController::addtoBed(QString aNumberBed, QString aType, QString aF
     {
         if (numberBedInt < 0)
         {
-            if(!aFacility2->removeBedAcute(numberBedInt))
+            if(!aFacility->removeBedAcute(numberBedInt))
                 return "-1";
         }
         else
         {
             for (int i=0; i< numberBedInt ; i++)
             {
-                aFacility2->addBedAcute();
+                aFacility->addBedAcute();
             }
         }
-        numberBed.setNum(aFacility2->getSizeAcute()); //Set as integer
+        numberBed.setNum(aFacility->getSizeAcute()); //Set as integer
 
     }
     else
@@ -54,20 +54,20 @@ QString AddBedController::addtoBed(QString aNumberBed, QString aType, QString aF
         {
             if (numberBedInt < 0)
             {
-                if(!aFacility2->removeBedComplex(numberBedInt))
+                if(!aFacility->removeBedComplex(numberBedInt))
                     return "-1";
             }
             else
             {
                 for (int i=0; i< numberBedInt ; i++)
                 {
-                    aFacility2->addBedComplex();
+                    aFacility->addBedComplex();
                 }
             }
-            numberBed.setNum(aFacility2->getSizeComplex()); //Set as integer
+            numberBed.setNum(aFacility->getSizeComplex()); //Set as integer
 
         }
-    else
+/*    else
         if(aType == "LTC")
         {
             if (numberBedInt < 0)
@@ -84,8 +84,7 @@ QString AddBedController::addtoBed(QString aNumberBed, QString aType, QString aF
             }
             numberBed.setNum(aFacility3->getSizeLTC()); //Set as integer
 
-        }
-
+        }*/
 
     return numberBed  ;
 }
