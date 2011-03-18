@@ -2,6 +2,7 @@
 
 Bed::Bed()
 {
+    use = 500;
 }
 
 Bed::~Bed()
@@ -18,4 +19,9 @@ int Bed::getNumber()
 void Bed::setNumber(int aNumber)
 {
     bedNumber = aNumber;
+}
+
+int Bed::getUse()
+{
+    return use;
 }

@@ -20,7 +20,9 @@ SOURCES += main.cpp\
     Bed.cpp \
     Facility.cpp \
     Hospital.cpp \
-    LongTermCare.cpp
+    LongTermCare.cpp \
+    Waitinglist.cpp \
+    AddBedController.cpp
 
 HEADERS  += mainwindow.h \
     User.h \
@@ -31,6 +33,8 @@ HEADERS  += mainwindow.h \
     Bed.h \
     Facility.h \
     Hospital.h \
-    LongTermCare.h
+    LongTermCare.h \
+    Waitinglist.h \
+    AddBedController.h
 
 FORMS    += mainwindow.ui

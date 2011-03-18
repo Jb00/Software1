@@ -10,10 +10,22 @@ private :
     int NumberBedAvailableAcute;
     int NumberBedTotalComplex;
     int NumberBedAvailableComplex;
+    QList<Bed*> listBedComplex;
+    QList<Bed*> listBedAcute;
 
 public:
     Hospital(QString,QString);
     ~Hospital();
+    void addBedAcute();
+    void removeBedAcute(int);
+    int getSizeAcute();
+    bool isEmptyAcute();
+
+    void addBedComplex();
+    void removeBedComplex(int);
+    int getSizeComplex();
+    bool isEmptyComplex();
+
 };
 
 #endif // HOSPITAL_H

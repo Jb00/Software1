@@ -7,12 +7,14 @@ class Bed
 {
 private :
         int bedNumber;
+        int use;
 
 public:
     Bed();
     ~Bed();
     void setNumber(int);
     int getNumber();
+    int getUse();
 
 };
 
