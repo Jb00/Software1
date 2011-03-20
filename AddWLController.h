@@ -16,8 +16,9 @@ private :
         AddWLController(); //So it cannot be call from the outside
 public:
     static AddWLController* getInstance();
-    void addWaitingList(Patient*, LongTermCare*);
+    void addWaitingList(Patient*,LongTermCare*);
     int getSize(LongTermCare* ); //Size of WL
+    //DESCTRUCTOR
 };
 
 #endif // ADDWLCONTROLLER_H

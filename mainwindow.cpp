@@ -13,7 +13,7 @@ MainWindow::MainWindow(QWidget *parent) :
     //Used to connect button to Slot
      connect(ui->pushButton_4,SIGNAL(clicked()),this,SLOT(addBedClick()));
      connect(ui->pushButton_3,SIGNAL(clicked()),this,SLOT(addWL()));
-     connect(ui->pushButton_7, SIGNAL(clicked()),this,SLOT(assignLTC()));
+     connect(ui->pushButton_7, SIGNAL(clicked()),this,SLOT(assignToBed()));
 
 
      //Fake information for testing purpose
@@ -68,7 +68,14 @@ void MainWindow::addBedClick()
   //  ui->btn_total_2->setText(ui->textAdd_2->text());
 }
 
-void MainWindow::assignLTC()
+void MainWindow::assignToBed()
 {
-    AssignLTCController::getInstance()->assignBed(aPatientList,aFacility4);
+    Hospital aHospitalTest();
+    LongTermCare aLTC();
+    QString aString= "Acute"; // ONLY USE FOR TESTING FOR ADDTOBED NEED A STRING
+
+        std::cout<<"HOSPITAL!";
+    //    AssignHospitalController::getInstance()->addtoBed(aPatient2,aFacility2,"Acute");  //TEST FOR ACUTE
+        AssignHospitalController::getInstance()->addtoBed(aPatient2,aFacility2,"Complex");  //TEST FOR COMPLEX
+
 }

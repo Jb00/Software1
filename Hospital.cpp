@@ -113,13 +113,14 @@ bool Hospital::NUsedBedComplex() //If we want to return bed #, simply return bed
     if (listBedComplex.isEmpty()) //If the list of bed is empty, then obviously return false
         return false;
 
-    while(loop > getSizeComplex())
+    while(loop < getSizeComplex())
     {
         if (listBedComplex.at(loop)->getUse() == 0 )
         {
             listBedComplex.at(loop)->setUse(1);
             return true; //We found an empty bed for the patient
         }
+        loop++;
     }
     return false; //No empty bed
 }
@@ -130,13 +131,14 @@ bool Hospital::NUsedBedAcute() //If we want to return bed #, simply return bed #
     if (listBedAcute.isEmpty()) //If the list of bed is empty, then obviously return false
         return false;
 
-    while(loop > getSizeComplex())
+    while(loop < getSizeAcute())
     {
         if (listBedAcute.at(loop)->getUse() == 0 )
         {
             listBedAcute.at(loop)->setUse(1);
             return true; //We found an empty bed for the patient
         }
+        loop++;
     }
     return false; //No empty bed
 }

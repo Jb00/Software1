@@ -66,6 +66,24 @@ bool LongTermCare::removePatientWL(Patient* aPatient)
     return false; //Fail to remove
 }
 
+bool LongTermCare::NUsedBedLTC()
+{
+    int loop=0;
+    if (listBedLTC.isEmpty()) //If the list of bed is empty, then obviously return false
+        return false;
+
+    while(loop < getSizeLTC())
+    {
+        if (listBedLTC.at(loop)->getUse() == 0 )
+        {
+            listBedLTC.at(loop)->setUse(1);
+            return true; //We found an empty bed for the patient
+        }
+        loop++;
+    }
+    return false; //No empty bed
+}
+
 int LongTermCare::getSizePatient()
 {
     return listPatient.size();

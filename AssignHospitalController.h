@@ -13,7 +13,7 @@ private :
 
 public:
         static AssignHospitalController* getInstance();
-        void addtoBed(Patient*,Hospital*,QString );
+        void addtoBed(Patient*,Hospital*,QString);
         ~AssignHospitalController();
 
 };

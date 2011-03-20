@@ -20,21 +20,33 @@ AssignHospitalController* AssignHospitalController::getInstance()
 
 void AssignHospitalController::addtoBed(Patient * aPatient, Hospital * aHospital,QString aType)
 {
-    if(aType == "Acute")
+    std::cout <<"Hospital size Before Acute: "<< aHospital->getSizeAcute()<<std::endl;
+    std::cout <<"Hospital size Before Complex: " << aHospital->getSizeComplex()<<std::endl
+            ;
+    if(aType == "Complex")
     {
             if (aHospital->NUsedBedComplex())
             {
+                std::cout <<"COMPLEX";
                 aHospital->addPatientComplex(aPatient);
             }
+    }
     else
-         if(aType == "Complex")
+        if(aType == "Acute")
+        {
              if (aHospital->NUsedBedAcute())
              {
+                 std::cout <<"SUPER INSIDE"<<std::endl;
                  aHospital->addPatientAcute(aPatient);
              }
+        }
+
         else
             std::cout<<"ERROR";                                         //Test only , should not happens.
-    }
+
+
+    std::cout <<"Hospital size After Acute : "<< aHospital->getSizeAcute()<<std::endl;
+    std::cout <<"Hospital size After Complex : " << aHospital->getSizeComplex()<<std::endl;
 }
 
 

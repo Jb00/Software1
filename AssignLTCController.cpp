@@ -18,7 +18,7 @@ void AssignLTCController::assignBed(QList<Patient *> aList, LongTermCare * aLTC)
 {
     for (int i =0; i< aList.size(); i++)
     {
-        if ( aLTC->removePatientWL(aList.at(i))) //If remove of the patient in the WL worked
+        if ((aLTC->removePatientWL(aList.at(i)))&& (aLTC->NUsedBedLTC())) //If remove of the patient in the WL worked and there is an empty bed in the facility
         {
            aLTC->addPatient(aList.at(i)); //Add to the facility
         }

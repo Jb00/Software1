@@ -28,6 +28,7 @@ public:
     int getSizePatient();
     void addWaitingList(Patient*);
     int getSizeWL();
+    bool NUsedBedLTC();
 };
 
 #endif // LONGTERMCARE_H

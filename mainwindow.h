@@ -3,10 +3,12 @@
 
 #include <QMainWindow>
 #include <QList>
+#include <QString>
 #include "Bed.h"
 #include "AddBedController.h"
 #include "AddWLController.h"
 #include "AssignLTCController.h"
+#include "AssignHospitalController.h"
 #include "Hospital.h"
 #include "LongTermCare.h"
 #include "Patient.h"
@@ -43,7 +45,7 @@ private:
 private slots:
     void addBedClick();
     void addWL();
-    void assignLTC();
+    void assignToBed();
 };
 
 #endif // MAINWINDOW_H
