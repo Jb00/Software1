@@ -1,3 +1,4 @@
+
 #include "Patient.h"
 
 Patient::Patient(QString aFName,QString aLName,QDate aDateBirth,QDate aDateAdmission,QString aTypeNeeded,QString aFacility, int aBed)
@@ -29,7 +30,10 @@ void Patient::setBed(int aBed)
     bedNumber =aBed;
 }
 
-
+void Patient::setdateWL(QDate aDate)
+{
+    dateWaitingList =aDate;
+}
 
 int Patient::getId()
 {
@@ -70,5 +74,14 @@ int Patient::getBed()
 {
     return bedNumber;
 }
+
+QDate Patient::getdateWL()
+{
+    return dateWaitingList;
+}
+
+
+
+
 
 

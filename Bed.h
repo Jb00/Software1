@@ -15,6 +15,7 @@ public:
     void setNumber(int);
     int getNumber();
     int getUse();
+    void setUse(int);
 
 };
 

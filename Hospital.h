@@ -12,6 +12,9 @@ private :
     int NumberBedAvailableComplex;
     QList<Bed*> listBedComplex;
     QList<Bed*> listBedAcute;
+    QList<Patient*> listAcute;
+    QList<Patient*> listComplex;
+
 
 public:
     Hospital(QString,QString);
@@ -25,6 +28,10 @@ public:
     bool removeBedComplex(int);
     int getSizeComplex();
     bool isEmptyComplex();
+    void addPatientComplex(Patient*);
+    void addPatientAcute(Patient*);
+    bool NUsedBedComplex(); //Non Used Bed for Complex Care. True = success false = fail
+    bool NUsedBedAcute();   //Non Used Bed for Acute care. True = success false = fail
 
 };
 

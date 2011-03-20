@@ -16,6 +16,7 @@ private :
         QString lName;
         QDate dateBirth;
         QDate dateAdmission;
+        QDate dateWaitingList;
         QString typeCareNeeded;
         QString facilityName;
         int bedNumber;
@@ -29,6 +30,7 @@ public:
     QString getLName();
     QDate getDateBirth();
     QDate getAdmission();
+    QDate getdateWL();
     QString getNeeded();
     QString getFacility();
     int getBed();
@@ -36,6 +38,8 @@ public:
     void setNeeded(QString);
     void setFacility(QString);
     void setBed(int);
+    void setdateWL(QDate);
+
 };
 #endif // PATIENT_H
 

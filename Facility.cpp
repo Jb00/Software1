@@ -4,13 +4,14 @@ Facility::Facility(QString aName, QString anArea)
 {
     name = aName;
     area = anArea;
-    id = 5; //DataBase
-
+    id = 88; //DataBase
 }
 
 Facility::~Facility()
 {
 }
+
+
 /*
 void Facility::addBed()
 {

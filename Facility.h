@@ -16,14 +16,14 @@ private :
         int NumberBedtotal;
         bool hasWaitingList;
 
+
+
 public:
     Facility(QString,QString); // Might need to pass NumberBedtotal, depends of the UI. I'll assume no.
     ~Facility();
-//    void addBed();
- //   int getBedSizeTotal();
-//    void removeBed(int);
-//    QList<Bed*> listBed;
-//    bool empty();
+
+
+
 
 
 

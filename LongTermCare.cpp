@@ -47,3 +47,37 @@ bool LongTermCare::removeBedLTC(int number)
     }
     return true;                       //Success erased 'number' Bed;
 }
+
+void LongTermCare::addPatient(Patient* aPatient)
+{
+    listPatient.append(aPatient);
+}
+
+bool LongTermCare::removePatientWL(Patient* aPatient)
+{
+    int position= listWL.indexOf(aPatient);// Return -1 if not in the list
+    std::cout << "THE POSITION"<<position;
+    if( position != -1) //If it is in the list
+    {
+        listWL.removeAt(position);
+        return true; //Success remove
+    }
+
+    return false; //Fail to remove
+}
+
+int LongTermCare::getSizePatient()
+{
+    return listPatient.size();
+}
+
+
+void LongTermCare::addWaitingList(Patient * aPatient)
+{
+    listWL.append(aPatient);
+}
+
+int LongTermCare::getSizeWL()
+{
+    return listWL.size();
+}

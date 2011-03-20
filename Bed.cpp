@@ -25,3 +25,8 @@ int Bed::getUse()
 {
     return use;
 }
+
+void Bed::setUse(int anUse)
+{
+    use = anUse;
+}

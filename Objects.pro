@@ -22,7 +22,10 @@ SOURCES += main.cpp\
     Hospital.cpp \
     LongTermCare.cpp \
     Waitinglist.cpp \
-    AddBedController.cpp
+    AddBedController.cpp \
+    AddWLController.cpp \
+    AssignLTCController.cpp \
+    AssignHospitalController.cpp
 
 HEADERS  += mainwindow.h \
     User.h \
@@ -35,6 +38,9 @@ HEADERS  += mainwindow.h \
     Hospital.h \
     LongTermCare.h \
     Waitinglist.h \
-    AddBedController.h
+    AddBedController.h \
+    AddWLController.h \
+    AssignLTCController.h \
+    AssignHospitalController.h
 
 FORMS    += mainwindow.ui

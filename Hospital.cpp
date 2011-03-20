@@ -29,24 +29,22 @@ bool Hospital::isEmptyAcute()
 }
 
 //Remove a bed Acute
+
 bool Hospital::removeBedAcute(int number)
 {
     int loop=0;                     //Will be used to make sure we dont check more than the number of actual bed. Incase they are all Used.
-    std::cout<<"size";
-    std::cout << getSizeAcute();
-    std::cout<<"size";
-    number = number *-1;
-    if (listBedAcute.isEmpty())
-        return -1;
+
+    number = number * -1 ; // To put the number positive
+
+    if (listBedAcute.isEmpty() || (number > listBedAcute.size())) //Make sure the list isn't empty
+        return false;
 
     while (number != 0 )
     {
-
-        std::cout <<listBedAcute.front()->getUse();
         if (listBedAcute.front()->getUse() == 0 )
         {
             listBedAcute.removeFirst();
-            number--;               //As the number is negative, ++
+            number--;
         }
         if (loop > getSizeAcute())   //If we tested more than number of Bed, and we couldn't remove the demanded number.
             return false;               //Fail to remove 'number' Bed
@@ -77,13 +75,18 @@ bool Hospital::isEmptyComplex()
 bool Hospital::removeBedComplex(int number)
 {
     int loop=0;
-    while (number != 0 || !isEmptyComplex())
+
+    number = number * -1 ; // To put the number positive
+
+    if (listBedComplex.isEmpty() || (number > listBedComplex.size())) //Make sure the list isn't empty
+        return false;
+
+    while (number != 0 )
     {
-        std::cout << listBedComplex.front()->getUse();
-        if (listBedComplex.front()->getUse() == 0 )
+        if (listBedComplex.at(loop)->getUse() == 0 )
         {
-            listBedComplex.removeFirst();
-            number++; //As the number is negative, ++
+            listBedComplex.removeAt(loop);
+            number--;
         }
         if (loop >= getSizeComplex())   //If we tested more than number of Bed, and we couldn't remove the demanded number.
             return false;               //Fail to remove 'number' Bed
@@ -91,6 +94,51 @@ bool Hospital::removeBedComplex(int number)
         loop++;                     //Keep track of the number of bed tested.
     }
     return true;                       //Success erased 'number' Bed;
+}
+
+void Hospital::addPatientAcute(Patient * aPatient)
+{
+
+    listAcute.append(aPatient);
+}
+
+void Hospital::addPatientComplex(Patient * aPatient)
+{
+    listComplex.append(aPatient);
+}
+
+bool Hospital::NUsedBedComplex() //If we want to return bed #, simply return bed # or -1 . -1 fail and bed# = win.
+{
+    int loop=0;
+    if (listBedComplex.isEmpty()) //If the list of bed is empty, then obviously return false
+        return false;
+
+    while(loop > getSizeComplex())
+    {
+        if (listBedComplex.at(loop)->getUse() == 0 )
+        {
+            listBedComplex.at(loop)->setUse(1);
+            return true; //We found an empty bed for the patient
+        }
+    }
+    return false; //No empty bed
+}
+
+bool Hospital::NUsedBedAcute() //If we want to return bed #, simply return bed # or -1 . -1 fail and bed# = win.
+{
+    int loop=0;
+    if (listBedAcute.isEmpty()) //If the list of bed is empty, then obviously return false
+        return false;
+
+    while(loop > getSizeComplex())
+    {
+        if (listBedAcute.at(loop)->getUse() == 0 )
+        {
+            listBedAcute.at(loop)->setUse(1);
+            return true; //We found an empty bed for the patient
+        }
+    }
+    return false; //No empty bed
 }
 
 

@@ -2,6 +2,12 @@
 
 AddBedController* AddBedController::anInstance = NULL; // Global static pointer used to ensure a single instance of the class.
 
+
+
+AddBedController::AddBedController()
+{
+}
+
 AddBedController* AddBedController::getInstance()
 {
     if(!anInstance) //If it is doesn't already exist
@@ -10,19 +16,15 @@ AddBedController* AddBedController::getInstance()
     return anInstance;//Return the instance.
 }
 
-AddBedController::AddBedController()
-{
-}
-
 QString AddBedController::addtoBed(QString aNumberBed, QString aType, Hospital *aFacility)
 {
     bool ok; //to make sure the conversion String to number Worked;
     int numberBedInt; //To hold the String to int
-    numberBed = aNumberBed;
-    type = aType;
- //   facility = aFacility;
- //   Hospital * aFacility2 = new Hospital("TheFacility","Ottawa"); //Will use the main facility list, but for now.LEt's assume 1 facility TO CHANGE
- //   LongTermCare * aFacility3 = new LongTermCare("TheFacility","Ottawa"); //Will use the main facility list, but for now.LEt's assume 1 facility TO CHANGE
+    QString numberBed = aNumberBed;
+
+ //   QString type = typeid(*aFacility).name();
+ //   std::cout <<'\n'<< typeid(aFacility).name();
+
 
     numberBedInt = numberBed.toInt(&ok);
 
@@ -37,7 +39,7 @@ QString AddBedController::addtoBed(QString aNumberBed, QString aType, Hospital *
         if (numberBedInt < 0)
         {
             if(!aFacility->removeBedAcute(numberBedInt))
-                return "-1";
+                return numberBed.setNum(aFacility->getSizeAcute()); //If invalid then return as it was at the begining.
         }
         else
         {
@@ -55,7 +57,7 @@ QString AddBedController::addtoBed(QString aNumberBed, QString aType, Hospital *
             if (numberBedInt < 0)
             {
                 if(!aFacility->removeBedComplex(numberBedInt))
-                    return "-1";
+                    return numberBed.setNum(aFacility->getSizeComplex()); //If invalid then return as it was at the begining.
             }
             else
             {
