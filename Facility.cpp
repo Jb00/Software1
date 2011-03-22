@@ -1,10 +1,12 @@
 #include "Facility.h"
 
-Facility::Facility(QString aName, QString anArea)
+Facility::Facility(int anId, QString aName, int aX, int aY)
 {
     name = aName;
-    area = anArea;
-    id = 88; //DataBase
+//    area = anArea;
+    id =anId;
+    x=aX;
+    y=aY;
 }
 
 Facility::~Facility()

@@ -1,7 +1,7 @@
 #include "LongTermCare.h"
 
 LongTermCare::LongTermCare(QString aName, QString anArea)
-    :Facility(aName, anArea)
+    :Facility(6,aName, 7,8)
 {
 }
 

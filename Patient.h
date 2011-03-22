@@ -11,34 +11,37 @@ class Patient
 {
 
 private :
-        int id;
-        QString fName;
-        QString lName;
-        QDate dateBirth;
-        QDate dateAdmission;
-        QDate dateWaitingList;
+
+//        QDate dateBirth;
+
         QString typeCareNeeded;
         QString facilityName;
         int bedNumber;
 
+        QString healthCardNum;
+        QString fName;
+        QString lName;
+        QDate dateAdmitted;
+        QDate dateWL;
+        int reqCare;
+        int occCare;
+
+
+
 public:
-    Patient(QString,QString,QDate,QDate,QString,QString,int);
+    Patient(QString,QString,QString,QDate,QDate,int,int);
     ~Patient();
 
-    int getId();
-    QString getFName();
-    QString getLName();
-    QDate getDateBirth();
-    QDate getAdmission();
-    QDate getdateWL();
-    QString getNeeded();
-    QString getFacility();
-    int getBed();
-
-    void setNeeded(QString);
+    void setNeeded(int);
     void setFacility(QString);
     void setBed(int);
     void setdateWL(QDate);
+    QString gethealthCard();
+    QString getFName();
+    QString getLName();
+    QDate getAdmission();
+    QDate getDateWL();
+    int getNeeded(); //Needed Care
 
 };
 #endif // PATIENT_H

@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
+QT       += sql
 
 TARGET = Objects
 TEMPLATE = app
@@ -25,7 +26,9 @@ SOURCES += main.cpp\
     AddBedController.cpp \
     AddWLController.cpp \
     AssignLTCController.cpp \
-    AssignHospitalController.cpp
+    AssignHospitalController.cpp \
+    DataDb.cpp \
+    DataController.cpp
 
 HEADERS  += mainwindow.h \
     User.h \
@@ -41,6 +44,8 @@ HEADERS  += mainwindow.h \
     AddBedController.h \
     AddWLController.h \
     AssignLTCController.h \
-    AssignHospitalController.h
+    AssignHospitalController.h \
+    DataDb.h \
+    DataController.h
 
 FORMS    += mainwindow.ui

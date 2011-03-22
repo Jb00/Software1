@@ -1,7 +1,7 @@
 #include "Hospital.h"
 
 Hospital::Hospital(QString aName, QString anArea)
-    :Facility( aName,  anArea)
+    :Facility(5, aName,  5,8)
 {
 
 }

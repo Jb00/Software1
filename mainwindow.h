@@ -12,6 +12,7 @@
 #include "Hospital.h"
 #include "LongTermCare.h"
 #include "Patient.h"
+#include "DataController.h"
 namespace Ui {
     class MainWindow;
 }
@@ -30,6 +31,8 @@ private:
     Hospital * aFacility3;
     LongTermCare * aFacility4;
     Patient * aPatient2;
+    QList<Patient*> listOfPatient;
+    QList<Facility*>listOfFacility;
 
 
     //Test Patient for Add patient to LTC
@@ -42,10 +45,12 @@ private:
     Patient * aPatient17;
     QList<Patient*> aPatientList;
 
+
 private slots:
     void addBedClick();
     void addWL();
     void assignToBed();
+    void dataTest();
 };
 
 #endif // MAINWINDOW_H

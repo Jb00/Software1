@@ -1,23 +1,22 @@
 
 #include "Patient.h"
 
-Patient::Patient(QString aFName,QString aLName,QDate aDateBirth,QDate aDateAdmission,QString aTypeNeeded,QString aFacility, int aBed)
+Patient::Patient(QString aHealthCardNum,QString aFName,QString aLName,QDate aDateAdmitted,QDate aDateWL,int aReqCare,int anOccCare)
 {
-    id = '5'; //To do with Db
+    aHealthCardNum = healthCardNum;
     fName = aFName;
     lName = aLName;
-    dateBirth = aDateBirth;
-    dateAdmission = aDateAdmission;
-    typeCareNeeded = aTypeNeeded;
-    facilityName = aFacility;
-    bedNumber = aBed;
+    dateAdmitted = aDateAdmitted;
+    dateWL = aDateWL;
+    reqCare = aReqCare;
+    occCare = anOccCare;
 }
 
 
 
-void Patient::setNeeded(QString aType)
+void Patient::setNeeded(int aType)
 {
-    typeCareNeeded =aType;
+    reqCare = aType;
 }
 
 void Patient::setFacility(QString aFacility)
@@ -32,12 +31,12 @@ void Patient::setBed(int aBed)
 
 void Patient::setdateWL(QDate aDate)
 {
-    dateWaitingList =aDate;
+    dateWL =aDate;
 }
 
-int Patient::getId()
+QString Patient::gethealthCard()
 {
-    return id;
+    return healthCardNum;
 }
 
 QString Patient::getFName()
@@ -50,22 +49,22 @@ QString Patient::getLName()
     return lName;
 }
 
-QDate Patient::getDateBirth()
+QDate Patient::getDateWL()
 {
-    return dateBirth;
+    return dateWL;
 }
 
 QDate Patient::getAdmission()
 {
-    return dateBirth;
+    return dateAdmitted;
 }
 
-QString Patient::getNeeded()
+int Patient::getNeeded()
 {
-    return typeCareNeeded;
+    return reqCare;
 }
 
-QString Patient::getFacility()
+/*QString Patient::getFacility()
 {
     return facilityName;
 }
@@ -74,11 +73,7 @@ int Patient::getBed()
 {
     return bedNumber;
 }
-
-QDate Patient::getdateWL()
-{
-    return dateWaitingList;
-}
+*/
 
 
 
